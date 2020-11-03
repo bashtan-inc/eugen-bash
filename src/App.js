@@ -1,8 +1,17 @@
 import React from 'react';
 import {Content} from './components/content';
-import {Header as HeaderBase} from './components/header';
+import {Header} from './components/header';
 import {Footer} from './components/footer';
 import styled from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${props => (props.whiteColor ? 'white' : 'black')};
+    font-family: ${props => props.theme.fontFamily};
+    margin: 0px;
+  }
+`
 
 const IntroSection = styled.section`
   padding-top: 200px;
@@ -23,22 +32,17 @@ const IntroSection = styled.section`
   }
 `
 
-const Header = styled(HeaderBase)`
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-`
+
 
 export const App = () => {
   return (
-    <>
-      <IntroSection>
-        <Header/>
+    <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
+      <Header />
+      <IntroSection >
+        <Content />
       </IntroSection>
-      <Content/ >
       <Footer />
-    </>
+      <GlobalStyle whiteColor />
+    </ThemeProvider>
   );
 }
