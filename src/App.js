@@ -1,29 +1,25 @@
-import React from "react";
-import { Content } from "./components/content";
-import { Header } from "./components/header";
-import { Footer } from "./components/footer";
-import styled from "styled-components";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import React from 'react';
+import { Content } from './components/content';
+import { Header } from './components/header';
+import { Footer } from './components/footer';
+import styled from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   body {
-    color: ${(props) => (props.whiteColor ? "white" : "black")};
+    color: ${(props) => (props.whiteColor ? 'white' : 'black')};
     font-family: ${(props) => props.theme.fontFamily};
     margin: 0px;
   }
 `;
 
-const AppContainer = styled.div``;
-
-const IntroSection = styled.section`
-  padding-top: 200px;
-  position: relative;
-  background-size: cover;
-  z-index: 1;
+const AppContainer = styled.div`
   background-image: url(assets/background-1920x1080.jpg);
-
+  background-size: cover;
+  position: relative;
+  z-index: 1;
   &::before {
-    content: "";
+    content: '';
     z-index: -1;
     position: absolute;
     top: 0;
@@ -36,15 +32,14 @@ const IntroSection = styled.section`
 
 export const App = () => {
   return (
-    <ThemeProvider theme={{ fontFamily: "Helvetica Neue" }}>
+    <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
       <AppContainer>
         <Header />
-        <IntroSection>
-          <Content />
-        </IntroSection>
-        <Footer />
+        <Content />
+
         <GlobalStyle whiteColor />
       </AppContainer>
+      <Footer />
     </ThemeProvider>
   );
 };

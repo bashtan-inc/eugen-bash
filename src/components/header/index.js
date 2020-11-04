@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import Store from '../../store';
 
 const Head = styled.header`
   position: absolute;
@@ -30,7 +31,7 @@ export const Header = ({ className }) => {
   return (
     <Head>
       <Container>
-        <Wrapper className={className}>header</Wrapper>
+        <Wrapper className={className}>{`Mail: ${Store.mail}`}</Wrapper>
       </Container>
     </Head>
   );
