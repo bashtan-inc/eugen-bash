@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Head = styled.header`
   position: absolute;
@@ -10,26 +10,28 @@ const Head = styled.header`
 `;
 
 const Container = styled.header`
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    @media (min-width: 992px) {
-        width: 960px;
-        max-width: 100%;
-    }
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 992px) {
+    width: 960px;
+    max-width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
-    border-radius: 5px;
-    padding: 30px 40px 20px;
-    background: #FFAD01;
-    color: #fff;
+  border-radius: 5px;
+  padding: 30px 40px 20px;
+  background: #ffad01;
+  color: #fff;
 `;
 
-export const Header = ({className})=>{
-    return  <Head>
-                <Container>
-                    <Wrapper className={className}>header</Wrapper>
-                </Container>
-            </Head>
-}
+export const Header = ({ className }) => {
+  return (
+    <Head>
+      <Container>
+        <Wrapper className={className}>header</Wrapper>
+      </Container>
+    </Head>
+  );
+};
