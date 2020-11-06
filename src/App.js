@@ -26,11 +26,13 @@ const AppContainer = styled.div`
   position: absolute;
   z-index: 1;
   width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  height: 100vh;
+
   &::before {
     content: '';
     z-index: -1;
@@ -41,17 +43,20 @@ const AppContainer = styled.div`
     right: 0;
     background: rgba(0, 0, 0, 0.2);
   }
+
+  @media (max-width: 600px) {
+  }
 `;
 
 export const App = () => {
   return (
     <>
+      <GlobalStyle whiteColor />
       <AppContainer>
         <Header />
         <Content />
-        <GlobalStyle whiteColor />
+        <Footer />
       </AppContainer>
-      <Footer />
     </>
   );
 };

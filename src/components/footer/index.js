@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import store from '../../store';
 
 const FooterContainer = styled.footer`
-  position: absolute;
-  bottom: 0px;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 100;
   background-color: #28023d;
   color: #777;
@@ -15,6 +12,12 @@ const FooterContainer = styled.footer`
   justify-content: center;
   font-size: 14px;
   height: 36px;
+
+  @media (max-width: 600px) {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 export const Footer = () => {

@@ -7,6 +7,9 @@ const Container = styled.header`
   padding: 50px;
   width: 100%;
   box-sizing: border-box;
+  @media (max-width: 600px) {
+    padding: 15px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -20,6 +23,11 @@ const Wrapper = styled.div`
     color: white;
     padding-right: 10px;
     font-size: 20px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 15px;
   }
 `;
 
