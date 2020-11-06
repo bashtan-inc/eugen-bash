@@ -8,16 +8,29 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${(props) => (props.whiteColor ? 'white' : 'black')};
-    font-family: ${(props) => props.theme.fontFamily};
     margin: 0px;
+    font-family: 'Poppins', serif;
   }
+  h1, h2, h3 {
+    font-family: 'Poppins', cursive;
+  }
+  h1, h2, h3, h4, h5, h6 {
+      line-height: 1.5;
+  }
+
 `;
 
 const AppContainer = styled.div`
   background-image: url(assets/background-1920x1080.jpg);
   background-size: cover;
-  position: relative;
+  position: absolute;
   z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 100vh;
   &::before {
     content: '';
     z-index: -1;
@@ -32,14 +45,13 @@ const AppContainer = styled.div`
 
 export const App = () => {
   return (
-    <ThemeProvider theme={{ fontFamily: 'Helvetica Neue' }}>
+    <>
       <AppContainer>
         <Header />
         <Content />
-
         <GlobalStyle whiteColor />
       </AppContainer>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 };

@@ -2,22 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Store from '../../store';
 
-const Head = styled.header`
-  position: absolute;
-  top: 30px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-`;
-
 const Container = styled.header`
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  @media (min-width: 992px) {
-    width: 960px;
-    max-width: 100%;
-  }
+  padding: 50px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const Wrapper = styled.div`
@@ -25,14 +14,39 @@ const Wrapper = styled.div`
   padding: 30px 40px 20px;
   background: #ffad01;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  ion-icon {
+    color: white;
+    padding-right: 10px;
+    font-size: 20px;
+  }
+`;
+
+const Location = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const Contact = styled.div`
+  display: flex;
+  justify-content: flex-flex-end;
+  align-items: center;
 `;
 
 export const Header = ({ className }) => {
   return (
-    <Head>
-      <Container>
-        <Wrapper className={className}>{`Mail: ${Store.mail}`}</Wrapper>
-      </Container>
-    </Head>
+    <Container>
+      <Wrapper className={className}>
+        <Location>
+          <ion-icon name="location"></ion-icon>
+          {Store.location}
+        </Location>
+        <Contact>
+          <ion-icon name="chatbox"></ion-icon>
+          {Store.mail().value}
+        </Contact>
+      </Wrapper>
+    </Container>
   );
 };

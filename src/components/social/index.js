@@ -4,9 +4,10 @@ import store from '../../store';
 
 const SocialContainer = styled.div`
   display: flex;
+  margin-top: 40px;
 `;
 
-const Network = styled.div`
+const Network = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,13 +21,20 @@ const Network = styled.div`
   margin: 0 5px 5px;
   background: #887392;
   color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: #ffa804;
+  }
 `;
 
 export const Social = () => {
   return (
     <SocialContainer>
-      {store.social.map((item) => (
-        <Network>{item}</Network>
+      {store.social.map(({ icon, link }) => (
+        <Network href={link} target="_blank">
+          <ion-icon name={icon}></ion-icon>
+        </Network>
       ))}
     </SocialContainer>
   );
