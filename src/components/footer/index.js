@@ -8,8 +8,8 @@ const FooterContainer = styled.footer`
   left: 0;
   right: 0;
   z-index: 100;
-  background-color: white;
-  color: #333;
+  background-color: #28023d;
+  color: #777;
   display: flex;
   align-items: center;
   justify-content: center;
