@@ -1,5 +1,3 @@
-- моб верстка
-- icon website
 - domen - https://eugen-bash.com/
 - docker
 - create mail domen
