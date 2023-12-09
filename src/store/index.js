@@ -19,14 +19,14 @@ class Store {
       {
         name: 'mail',
         icon: 'mail',
-        value: 'contact@eugen.bash.com',
-        link: 'mailto:contact@eugen.bash.com',
+        value: 'contact@eugen-bash.com',
+        link: 'mailto:contact@eugen-bash.com',
       },
     ];
     this.name = 'Eugene Bashtan';
     this.description = 'Full Stack Web Developer';
     this.location = 'Russia, Moscow';
-    this.copyrights = 'Copyright ©2020 All rights reserved';
+    this.copyrights = 'Copyright ©2022 All rights reserved';
   }
 
   mail() {
