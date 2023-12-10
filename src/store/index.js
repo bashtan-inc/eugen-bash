@@ -26,7 +26,7 @@ class Store {
     this.name = 'Eugene Bashtan';
     this.description = 'Full Stack Web Developer';
     this.location = 'Russia, Moscow';
-    this.copyrights = 'Copyright ©2022 All rights reserved';
+    this.copyrights = 'Copyright ©2023 All rights reserved';
   }
 
   mail() {
