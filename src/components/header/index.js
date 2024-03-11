@@ -42,6 +42,29 @@ const Contact = styled.div`
   align-items: center;
 `;
 
+const Link = styled.a`
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    color: blue;
+    ion-icon {
+      color: blue;
+    }
+  }
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  & > * {
+    margin-right: 20px;
+  }
+`;
+
 export const Header = ({ className }) => {
   return (
     <Container>
@@ -50,10 +73,18 @@ export const Header = ({ className }) => {
           <ion-icon name="location"></ion-icon>
           {Store.location}
         </Location>
-        <Contact>
-          <ion-icon name="chatbox"></ion-icon>
-          {Store.mail().value}
-        </Contact>
+        <Buttons>
+          <Contact>
+            <Link href="https://board.eugen-bash.com" target="_blank">
+              <ion-icon name="easel"></ion-icon>
+              Board
+            </Link>
+          </Contact>
+          <Contact>
+            <ion-icon name="chatbox"></ion-icon>
+            {Store.mail().value}
+          </Contact>
+        </Buttons>
       </Wrapper>
     </Container>
   );
