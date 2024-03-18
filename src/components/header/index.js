@@ -74,6 +74,12 @@ export const Header = ({ className }) => {
           {Store.location}
         </Location>
         <Buttons>
+        <Contact>
+            <Link href="https://blog.eugen-bash.com" target="_blank">
+              <ion-icon name="book"></ion-icon>
+              Blog
+            </Link>
+          </Contact>
           <Contact>
             <Link href="https://board.eugen-bash.com" target="_blank">
               <ion-icon name="easel"></ion-icon>
